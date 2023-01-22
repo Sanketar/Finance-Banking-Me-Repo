@@ -69,13 +69,16 @@
           <div class="row">
             <div class="col-md-6 padding_left_0">
               <div class="mail_section">
-                <input type="" id="inputName" class="mail_text_1" placeholder="Name" name="Name">
-                <input type="" id="inputNumber" class="mail_text_1" placeholder="Phone Number" name="Phone Number">
-                <input type="" id="inputMail" class="mail_text_1" placeholder="Email" name="Email">
+                <input id="inputName" class="mail_text_1" placeholder="Name" name="Name">
+                <input id="inputNumber" class="mail_text_1" placeholder="Phone Number" name="Phone Number">
+                <input id="inputMail" class="mail_text_1" placeholder="Email" name="Email">
                 <textarea id="inputMessage" class="massage_text" placeholder="Message" rows="5" id="comment" name="Message"></textarea>
-                <div class="send_bt"><a class="my-btn" href="#" onclick='document.getElementById("message").innerHTML="Email Sent"'>send</a><p id="message"></p></div>
+                <div class="send_bt">
+                <button type="button" id="my-button" onclick='document.getElementById("message").innerHTML="Email Sent";'>
+                  Send
+                </button>
+                <p id="message"></p></div>
               </div>
-              
             </div>
             <div class="col-md-6 padding_0">
               <div class="map-responsive">
