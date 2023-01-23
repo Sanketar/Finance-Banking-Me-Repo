@@ -111,7 +111,7 @@ resource "aws_eip" "proj-eip" {
 }
 
 # Creating an ubuntu EC2 instance
-resource "aws_instance" "project-instance" {
+resource "aws_instance" "Production-instance" {
  ami = "ami-0ef82eeba2c7a0eeb"
  instance_type = "t2.micro"
  availability_zone = "ap-south-1b"
@@ -130,8 +130,10 @@ resource "aws_instance" "project-instance" {
  sudo systemctl enable docker
  sudo docker run -p 8084:8082 -d sanketar/insure-me:1.0 
  sudo docker run -p 9090:9090 prom/prometheus
+ sudo docker volume create grafana-storage
+ sudo docker run -d -p 3000:3000 --name=grafana -v grafana-storage:/var/lib/grafana grafana/grafana
  EOF
  tags = {
- Name = "project-instance"
+ Name = "Production-instance"
  }
 }
