@@ -130,8 +130,7 @@ resource "aws_instance" "Production-instance" {
  sudo systemctl enable docker
  sudo docker run -p 8084:8082 -d sanketar/insure-me:1.0 
  sudo docker run -p 9090:9090 prom/prometheus
- sudo docker volume create grafana-storage
- sudo docker run -d -p 3000:3000 --name=grafana -v grafana-storage:/var/lib/grafana grafana/grafana
+ sudo docker run -d --name=grafana -p 3000:3000 grafana/grafana
  EOF
  tags = {
  Name = "Production-instance"
