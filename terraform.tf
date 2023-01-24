@@ -131,6 +131,8 @@ resource "aws_instance" "Production-instance" {
  sudo docker run -p 8084:8082 -d sanketar/finance-me:1.0 
  sudo docker run -p 9090:9090 prom/prometheus
  sudo docker run -d -p 3000:3000 grafana/grafana-enterprise
+ sudo systemctl daemon-reload
+ sudo systemctl start grafana-server
  EOF
  tags = {
  Name = "Production-instance"
