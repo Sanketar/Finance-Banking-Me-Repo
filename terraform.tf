@@ -128,7 +128,7 @@ resource "aws_instance" "Production-instance" {
  sudo systemctl enable nginx
  sudo apt install docker.io -y
  sudo systemctl enable docker
- sudo docker run -p 8084:8082 -d sanketar/insure-me:1.0 
+ sudo docker run -p 8084:8082 -d sanketar/finance-me:1.0 
  sudo docker run -p 9090:9090 prom/prometheus
  sudo docker run -d -p 3000:3000 grafana/grafana-enterprise
  EOF
